@@ -132,9 +132,105 @@
             </button>
         </div>
 
-        <!-- Books Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Book 1 - Currently Rented -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div class="relative">
-                    <img src="data:image/jpeg;base64,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
+      <!-- Books Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <!-- Book 1 - Available for Rent -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+        <div class="relative">
+            <img src="/placeholder.svg?height=200&width=300" alt="Book Cover" class="w-full h-48 object-cover">
+            <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 rounded-bl-lg text-sm font-medium">
+                Available
+            </div>
+        </div>
+        <div class="p-4">
+            <div class="flex flex-wrap gap-2 mb-2">
+                <span class="inline-block px-2 py-1 text-xs font-semibold bg-teal-100 text-teal-800 rounded-md">JavaScript</span>
+                <span class="inline-block px-2 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-md">Intermediate</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">Eloquent JavaScript</h3>
+            <p class="text-sm text-gray-600 mb-2">By Marijn Haverbeke</p>
+            <div class="flex items-center mb-3">
+                <span class="text-sm font-semibold text-teal-600">$2.50 per day</span>
+            </div>
+            <div class="flex space-x-2">
+                <button class="w-full bg-teal-600 text-white px-3 py-2 rounded hover:bg-teal-700 transition-colors duration-200 text-sm flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                    Rent Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 3 - Overdue -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+        <div class="relative">
+            <img src="/placeholder.svg?height=200&width=300" alt="Book Cover" class="w-full h-48 object-cover">
+            <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 rounded-bl-lg text-sm font-medium">
+                Overdue
+            </div>
+        </div>
+        <div class="p-4">
+            <div class="flex flex-wrap gap-2 mb-2">
+                <span class="inline-block px-2 py-1 text-xs font-semibold bg-red-100 text-red-800 rounded-md">React</span>
+                <span class="inline-block px-2 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-md">Advanced</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">React Design Patterns</h3>
+            <p class="text-sm text-gray-600 mb-2">By Carlos Santana</p>
+            <div class="flex flex-col space-y-2 mb-3">
+                <span class="text-sm font-semibold text-red-600">$3.25 per day</span>
+                <div class="flex justify-between">
+                    <span class="text-xs text-gray-500">Rented by: Maria Garcia</span>
+                    <span class="text-xs text-red-500 font-medium">Overdue by 5 days</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-xs text-gray-500">Due: April 17, 2025</span>
+                </div>
+            </div>
+            <div class="flex space-x-2">
+                <button class="w-full bg-red-100 text-red-700 px-3 py-2 rounded hover:bg-red-200 transition-colors duration-200 text-sm flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    Send Reminder
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 8 - Reserved -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
+        <div class="relative">
+            <img src="/placeholder.svg?height=200&width=300" alt="Book Cover" class="w-full h-48 object-cover">
+            <div class="absolute top-0 right-0 bg-purple-500 text-white px-3 py-1 rounded-bl-lg text-sm font-medium">
+                Reserved
+            </div>
+        </div>
+        <div class="p-4">
+            <div class="flex flex-wrap gap-2 mb-2">
+                <span class="inline-block px-2 py-1 text-xs font-semibold bg-yellow-100 text-yellow-800 rounded-md">AWS</span>
+                <span class="inline-block px-2 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-md">Advanced</span>
+            </div>
+            <h3 class="text-lg font-bold mb-1">AWS Certified Solutions Architect</h3>
+            <p class="text-sm text-gray-600 mb-2">By David Clinton</p>
+            <div class="flex flex-col space-y-2 mb-3">
+                <span class="text-sm font-semibold text-purple-600">$3.00 per day</span>
+                <div class="flex justify-between">
+                    <span class="text-xs text-gray-500">Reserved by: Emma Wilson</span>
+                    <span class="text-xs text-purple-500">Available: May 10, 2025</span>
+                </div>
+            </div>
+            <div class="flex space-x-2">
+                <button class="w-full bg-gray-300 text-gray-700 px-3 py-2 rounded cursor-not-allowed text-sm flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    Reserved
+                </button>
+            </div>
+        </div>
+    </div>
+</div>    
+</body>
+</html>
