@@ -1,0 +1,24 @@
+{
+  "name": "anouar-elbarry-devbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Youcode-Classe-E-2024-2025/Anouar-Elbarry-DevBook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Youcode-Classe-E-2024-2025/Anouar-Elbarry-DevBook/issues"
+  },
+  "homepage": "https://github.com/Youcode-Classe-E-2024-2025/Anouar-Elbarry-DevBook#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

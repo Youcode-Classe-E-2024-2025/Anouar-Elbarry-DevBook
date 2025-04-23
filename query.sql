@@ -29,7 +29,7 @@ CREATE TABLE rental (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     book_id INT,
-    rent_date DATE DEFAULT CURRENT_DATE,
+    rent_date DATETIME DEFAULT CURRENT_TIMESTAMP,
     return_date DATE,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (book_id) REFERENCES book(id)
