@@ -10,20 +10,18 @@ const PORT = process.env.PORT || 3000;
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: 'jppp5734',
   database: 'devbook',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
 });
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Book Routes
 app.get('/books', async (req, res) => {
   try {
     const [books] = await pool.query('SELECT * FROM books');
@@ -46,9 +44,6 @@ app.post('/books', async (req, res) => {
   }
 });
 
-// Update and Delete routes will be similar
-
-// Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
