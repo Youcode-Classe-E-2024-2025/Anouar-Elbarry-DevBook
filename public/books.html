@@ -41,109 +41,17 @@
         <h2 class="text-4xl font-bold text-center mb-8 text-gray-800">Book Catalog</h2>
 
         <!-- Books Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Book 1: JavaScript -->
-            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">JavaScript Fundamentals</h3>
-                    <div class="space-y-2 text-gray-600 mb-4">
-                        <p><strong>Author:</strong> John Smith</p>
-                        <p><strong>Price:</strong> $29.99</p>
-                        <p><strong>Technology:</strong> JavaScript</p>
-                        <p><strong>Level:</strong> Beginner</p>
-                    </div>
-                    <button class="w-full bg-primary text-white py-2 rounded-md hover:bg-blue-700 transition">
-                        Rent Book
-                    </button>
-                </div>
-            </div>
-
-            <!-- Book 2: Python -->
-            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Python for Data Science</h3>
-                    <div class="space-y-2 text-gray-600 mb-4">
-                        <p><strong>Author:</strong> Emily Chen</p>
-                        <p><strong>Price:</strong> $39.99</p>
-                        <p><strong>Technology:</strong> Python</p>
-                        <p><strong>Level:</strong> Intermediate</p>
-                    </div>
-                    <button class="w-full bg-primary text-white py-2 rounded-md hover:bg-blue-700 transition">
-                        Rent Book
-                    </button>
-                </div>
-            </div>
-
-            <!-- Book 3: React -->
-            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">React: Modern Web Development</h3>
-                    <div class="space-y-2 text-gray-600 mb-4">
-                        <p><strong>Author:</strong> Michael Rodriguez</p>
-                        <p><strong>Price:</strong> $44.99</p>
-                        <p><strong>Technology:</strong> React</p>
-                        <p><strong>Level:</strong> Advanced</p>
-                    </div>
-                    <button class="w-full bg-primary text-white py-2 rounded-md hover:bg-blue-700 transition">
-                        Rent Book
-                    </button>
-                </div>
-            </div>
-
-            <!-- Book 4: Machine Learning -->
-            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Machine Learning Basics</h3>
-                    <div class="space-y-2 text-gray-600 mb-4">
-                        <p><strong>Author:</strong> Sarah Kim</p>
-                        <p><strong>Price:</strong> $49.99</p>
-                        <p><strong>Technology:</strong> AI/ML</p>
-                        <p><strong>Level:</strong> Beginner</p>
-                    </div>
-                    <button class="w-full bg-primary text-white py-2 rounded-md hover:bg-blue-700 transition">
-                        Rent Book
-                    </button>
-                </div>
-            </div>
-
-            <!-- Book 5: Cloud Computing -->
-            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Cloud Computing Essentials</h3>
-                    <div class="space-y-2 text-gray-600 mb-4">
-                        <p><strong>Author:</strong> David Lee</p>
-                        <p><strong>Price:</strong> $54.99</p>
-                        <p><strong>Technology:</strong> AWS</p>
-                        <p><strong>Level:</strong> Intermediate</p>
-                    </div>
-                    <button class="w-full bg-primary text-white py-2 rounded-md hover:bg-blue-700 transition">
-                        Rent Book
-                    </button>
-                </div>
-            </div>
-
-            <!-- Book 6: Cybersecurity -->
-            <div class="book-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Cybersecurity Fundamentals</h3>
-                    <div class="space-y-2 text-gray-600 mb-4">
-                        <p><strong>Author:</strong> Alex Wong</p>
-                        <p><strong>Price:</strong> $59.99</p>
-                        <p><strong>Technology:</strong> Security</p>
-                        <p><strong>Level:</strong> Advanced</p>
-                    </div>
-                    <button class="w-full bg-primary text-white py-2 rounded-md hover:bg-blue-700 transition">
-                        Rent Book
-                    </button>
-                </div>
-            </div>
+        <div id="books_Container" class=" grid grid-cols-1 md:grid-cols-3 gap-6">
+        
         </div>
     </div>
 </body>
 </html>
 
 <script>
+    let books = [];
 document.addEventListener('DOMContentLoaded', async (req,res) => {
+        const container = document.getElementById('books_Container');
     try {
         const response = await fetch('http://localhost:3000/api/books');
         if (!response.ok) {
@@ -151,9 +59,37 @@ document.addEventListener('DOMContentLoaded', async (req,res) => {
         }
         const books = await response.json();
         console.log('Books loaded:', books);
-        // TODO: Update the UI with the books data
+        
+        
+
+        books.forEach(book => {
+        let card = creatCard(book);
+        container.appendChild(card);
+        });
+        
     } catch (error) {
         console.error('Error fetching books:', error);
+    }
+
+    function creatCard(book){
+        const card = document.createElement('div');
+        card.innerHTML = `
+         <div class='book-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl'>
+                <div class='p-6'>
+                    <h3 class='text-xl font-semibold text-gray-800 mb-4'>${book.name}</h3>
+                    <div class='space-y-2 text-gray-600 mb-4'>
+                        <p><strong>Author:</strong>${book.author}</p>
+                        <p><strong>Price:</strong> ${book.price}</p>
+                        <p><strong>Technology:</strong> ${book.technology_name}</p>
+                        <p><strong>Level:</strong>${book.level}</p>
+                    </div>
+                    <button class='w-full bg-primary text-white py-2 rounded-md hover:bg-blue-700 transition">
+                        Rent Book
+                    </button>
+                </div>
+            </div>
+        `;
+        return card;
     }
 });
 </script>
