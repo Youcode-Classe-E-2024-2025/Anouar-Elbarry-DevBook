@@ -3,7 +3,6 @@ class BookService {
         this.pool = pool;
     }
 
-    // Get all books with technology information
     async getAllBooks() {
         try {
             const [books] = await this.pool.query(`
@@ -20,7 +19,7 @@ class BookService {
         }
     }
 
-    // Get book by ID
+    // Get book 
     async getBookById(bookId) {
         try {
             const [books] = await this.pool.query(`
