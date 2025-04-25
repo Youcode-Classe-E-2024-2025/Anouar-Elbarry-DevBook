@@ -1,26 +1,19 @@
 {
-  "name": "anouar-elbarry-devbook",
+  "name": "devbooks",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Book rental and management system",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Youcode-Classe-E-2024-2025/Anouar-Elbarry-DevBook.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Youcode-Classe-E-2024-2025/Anouar-Elbarry-DevBook/issues"
-  },
-  "homepage": "https://github.com/Youcode-Classe-E-2024-2025/Anouar-Elbarry-DevBook#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "mysql2": "^3.14.0"
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
