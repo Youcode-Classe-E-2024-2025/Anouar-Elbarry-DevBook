@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Youcode-Classe-E-2024-2025/Anouar-Elbarry-DevBook#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0"
   }
 }
